@@ -1,0 +1,17 @@
+
+# Automatic text detection
+* text=auto
+
+# Consistent line endings for project source and documentation
+*.py text eol=lf
+*.ipynb text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.csv text eol=lf
+*.json text eol=lf
+
+# Preserve exact bytes of the frozen R-001 configuration
+configs/r001.json -text
+
+# Binary assets
+*.png binary

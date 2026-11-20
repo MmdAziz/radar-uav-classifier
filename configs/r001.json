@@ -1,0 +1,13 @@
+{
+  "experiment": "R-001",
+  "epochs": 20,
+  "batch_size": 64,
+  "lr": 1e-05,
+  "seed": 3407,
+  "weights": "IMAGENET1K_V1",
+  "checkpoint_selection": "final_epoch",
+  "expected_train_rows": 23504,
+  "expected_eval_rows": 2146,
+  "train_csv_sha256": "39a7eb3100324bdfd83423e9336626c580b8420a9a255a12dc13ddd7af19fb99",
+  "eval_csv_sha256": "f95ea124ab21410c4214d0ca62709207d97fba8eed36e9b5817a6a45440a3f83"
+}

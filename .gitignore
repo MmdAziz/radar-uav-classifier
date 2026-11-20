@@ -1,0 +1,48 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+data/
+RadarData/
+drone_project/
+outputs/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.h5
+*.zip
+*.7z
+*.tar
+*.gz
+*.npy
+*.npz
+*.mat
+*.tmp
+*.log
+~$*
+.ipynb_checkpoints/
+
+
+# Local IDE configuration
+.vscode/
+.idea/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Local training run directories
+runs/
+Runs/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Python package build artifacts
+*.egg-info/
+build/
+dist/

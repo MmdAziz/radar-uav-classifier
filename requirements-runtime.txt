@@ -1,0 +1,3 @@
+# Colab-safe non-framework dependencies. Does not install torch or torchvision.
+-r requirements.txt
+numpy>=1.26.4,<3

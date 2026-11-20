@@ -1,0 +1,182 @@
+{
+  "document_type": "publication_provenance_summary",
+  "note": "Curated, non-executable subset of the completed R-001 results.json. No model inference or metrics recomputation was performed.",
+  "source_results_json_sha256": "e04f7e5707834a412925d282108ed3cbd30c5e9b3706f70ae062ee9ccf67f718",
+  "experiment": "R-001",
+  "status": "frozen_complete",
+  "task": "binary UAV / non-UAV radar spectrogram classification",
+  "model": {
+    "architecture": "ResNet18",
+    "pretrained_weights": "IMAGENET1K_V1",
+    "pretrained_weight_file_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+    "checkpoint_selection": "final_epoch",
+    "final_checkpoint_filename": "final.pt",
+    "final_checkpoint_sha256": "09a8522ed9a6e3d90c4ba0cb4866b094f61bedb49f674dd0cfe8e645851f917a"
+  },
+  "configuration": {
+    "experiment": "R-001",
+    "epochs": 20,
+    "batch_size": 64,
+    "lr": 1e-05,
+    "seed": 3407,
+    "weights": "IMAGENET1K_V1",
+    "checkpoint_selection": "final_epoch",
+    "expected_train_rows": 23504,
+    "expected_eval_rows": 2146,
+    "train_csv_sha256": "39a7eb3100324bdfd83423e9336626c580b8420a9a255a12dc13ddd7af19fb99",
+    "eval_csv_sha256": "f95ea124ab21410c4214d0ca62709207d97fba8eed36e9b5817a6a45440a3f83"
+  },
+  "training": {
+    "epochs_completed": 20,
+    "optimizer": {
+      "name": "Adam",
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0,
+      "amsgrad": false
+    },
+    "loss": "unweighted cross entropy",
+    "scheduler": null,
+    "drop_last": false,
+    "num_workers": 0,
+    "preprocessing": "PIL RGB; bilinear 224x224 antialias=True; ToTensor; no normalization",
+    "training_rows": 23504
+  },
+  "dataset_identity": {
+    "train_csv_sha256": "39a7eb3100324bdfd83423e9336626c580b8420a9a255a12dc13ddd7af19fb99",
+    "train_images_identity_sha256": "4219aa178c8d4d954fd111d2ffe11c183ce13aeb1eb114066ea5d24f257af397",
+    "eval_csv_sha256": "f95ea124ab21410c4214d0ca62709207d97fba8eed36e9b5817a6a45440a3f83"
+  },
+  "evaluation": {
+    "overall": {
+      "rows": 2146,
+      "class_counts": {
+        "non_uav": 1229,
+        "uav": 917
+      },
+      "confusion_matrix": [
+        [
+          1229,
+          0
+        ],
+        [
+          0,
+          917
+        ]
+      ],
+      "matrix_order": "rows=true, columns=predicted; labels=[0,1]",
+      "accuracy": 1.0,
+      "uav_precision": 1.0,
+      "uav_recall": 1.0,
+      "uav_f1": 1.0,
+      "false_positive_rate": 0.0
+    },
+    "per_frequency": {
+      "207GHz": {
+        "rows": 848,
+        "class_counts": {
+          "non_uav": 437,
+          "uav": 411
+        },
+        "confusion_matrix": [
+          [
+            437,
+            0
+          ],
+          [
+            0,
+            411
+          ]
+        ],
+        "matrix_order": "rows=true, columns=predicted; labels=[0,1]",
+        "accuracy": 1.0,
+        "uav_precision": 1.0,
+        "uav_recall": 1.0,
+        "uav_f1": 1.0,
+        "false_positive_rate": 0.0
+      },
+      "24GHz": {
+        "rows": 519,
+        "class_counts": {
+          "non_uav": 311,
+          "uav": 208
+        },
+        "confusion_matrix": [
+          [
+            311,
+            0
+          ],
+          [
+            0,
+            208
+          ]
+        ],
+        "matrix_order": "rows=true, columns=predicted; labels=[0,1]",
+        "accuracy": 1.0,
+        "uav_precision": 1.0,
+        "uav_recall": 1.0,
+        "uav_f1": 1.0,
+        "false_positive_rate": 0.0
+      },
+      "94GHz": {
+        "rows": 779,
+        "class_counts": {
+          "non_uav": 481,
+          "uav": 298
+        },
+        "confusion_matrix": [
+          [
+            481,
+            0
+          ],
+          [
+            0,
+            298
+          ]
+        ],
+        "matrix_order": "rows=true, columns=predicted; labels=[0,1]",
+        "accuracy": 1.0,
+        "uav_precision": 1.0,
+        "uav_recall": 1.0,
+        "uav_f1": 1.0,
+        "false_positive_rate": 0.0
+      }
+    },
+    "undefined_metric_policy": "null when denominator is zero"
+  },
+  "runtime": {
+    "python": "3.13.16",
+    "torch": "2.11.0+cu130",
+    "torchvision": "0.26.0+cu130",
+    "cuda": "13.0",
+    "cudnn": 92700,
+    "gpu": "Tesla T4",
+    "selected_packages": {
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "pillow": "11.1.0"
+    }
+  },
+  "source_code_sha256": {
+    "src/__init__.py": "f27f3587306ef2e326e2984980c44f530fb0b28454b4d6ca32d26b18c2fa7a9a",
+    "src/audit_dataset.py": "c46abebf778e7439126b8244be8f1c4a2973fef4e63753ab92980956b4f47c74",
+    "src/check_environment.py": "6b6bec96aa2631545d5de29f5251846101adee9f06aecee1f225bdb3b7849635",
+    "src/evaluate.py": "27ea9f9e72185072c1d43fa286bef9398cfb2c9c8b0c4f162e18d8efb1599756",
+    "src/experiment.py": "defec0236e1c03b9286afd037dbb510d88b092b55a10ce9c81fda4452c9503ee",
+    "src/recovery.py": "05a7c72d60bfad585be9edeea729bbc952bfb7314853e6059b7cfe94b07211f1",
+    "src/train.py": "6a84f77fba9e7815d65eb8f15f86cf709d3ad131a3d036f08f0394687c90f55e"
+  },
+  "reference_source_commit": "78c899b1e36df3b0e8e19a390f34b9e209a5ccdb",
+  "interpretation": {
+    "scope": "Performance measured on the supplied original evaluation CSV partition only.",
+    "integrity_check_context": "Prior audits found zero exact filename or encoded-byte overlap across training/evaluation; neither check establishes independence of recording sessions.",
+    "caveats": [
+      "Source-folder date prefixes coincide with class (non-UAV 2024-02-06; UAV 2024-03-01), so acquisition confounding is a concern. Folder dates are path-derived proxies.",
+      "Closely timed, same-class/same-frequency train and evaluation source folders were found in an earlier audit; overlapping trials were not established.",
+      "The supplied evaluation split does not establish generalization to independent sessions, sensors or environments."
+    ]
+  }
+}
